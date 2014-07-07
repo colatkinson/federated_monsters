@@ -108,6 +108,12 @@ pygments_style = 'sphinx'
 # documents.
 #keep_warnings = False
 
+"""
+Hello, and welcome to 192.168.1.6
+    >>> /echo Hello, world!
+    Hello, world!
+    >>> /uploadmonster [JSON-serialized monster]
+    OK"""
 
 # -- Options for HTML output -------------------------------------------
 

@@ -24,7 +24,7 @@ test_requirements = [
 
 setup(
     name='federated_monsters',
-    version='0.1.0',
+    version='0.3.0',
     description='Federated Monsters is a game that seeks to follow the format of games like Pokemon, but to instead use a federated server format to store and trade creatures',
     long_description=readme + '\n\n' + history,
     author='Colin Atkinson',

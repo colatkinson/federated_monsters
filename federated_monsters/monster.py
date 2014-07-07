@@ -1,7 +1,12 @@
 # -*- coding: utf-8 -*-
+
 """This module contains the Monster and Move classes."""
 import json
 import hashlib
+try:
+    from global_vars import *
+except ImportError:
+    from federated_monsters.global_vars import *
 
 
 class Monster(object):
@@ -28,8 +33,13 @@ class Monster(object):
         Returns:
             tuple (hashlib.hash, str): The hash and JSON form of the monster.
         """
-        txt = json.dumps(self.__dict__).encode("UTF-8")
-        hash_obj = hashlib.sha512(txt)
+        tmp_dict = self.__dict__
+        moves_arr = []
+        for i in tmp_dict["moves"]:
+            moves_arr.append(i.serialize())
+        tmp_dict["moves"] = moves_arr
+        txt = json.dumps(tmp_dict)
+        hash_obj = hashlib.sha512(txt.encode(ENC_)).hexdigest()
 
         return (hash_obj, txt)
 
@@ -53,3 +63,11 @@ class Move(object):
         self.type_name = type_name
         self.effect = effect
         self.dmg = dmg
+
+    def serialize(self):
+        """Serialize the move for storage.
+
+        Returns:
+            str: The JSON serialization of the __dict__.
+        """
+        return json.dumps(self, default=lambda o: o.__dict__)

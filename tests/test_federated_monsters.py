@@ -13,15 +13,15 @@ import unittest
 from federated_monsters import federated_monsters
 
 
-class TestFederated_monsters(unittest.TestCase):
+class TestFederatedMonsters(unittest.TestCase):
 
-    def setUp(self):
+    def set_up(self):
         pass
 
     def test_something(self):
         pass
 
-    def tearDown(self):
+    def tear_down(self):
         pass
 
 if __name__ == '__main__':
