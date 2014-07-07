@@ -12,7 +12,9 @@ python:
 #install BerkeleyDB deps
 before_install:
   - sudo apt-get update -qq
-  - sudo apt-get install -y libdb-dev
+#- sudo apt-get install -y libdb-dev
+  - sudo apt-get install `apt-cache depends pkgname | awk '/Depends:/{print$2}'`
+  - sudo apt-get build-deps python-bsddb3
 
 # command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
 install: pip install -r requirements.txt
