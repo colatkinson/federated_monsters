@@ -8,7 +8,7 @@ Federated Monsters
 .. image:: https://travis-ci.org/colatkinson/federated_monsters.svg?branch=master
         :target: https://travis-ci.org/colatkinson/federated_monsters
 
-.. image:: https://pypip.in/d/federated_monsters/badge.svg
+.. image:: https://pypip.in/download/federated_monsters/badge.svg
         :target: https://pypi.python.org/pypi/federated_monsters
 
 
