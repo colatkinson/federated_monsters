@@ -14,9 +14,12 @@ except ImportError:
 readme = open('README.rst').read()
 history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
-requirements = [
-    "bsddb3>=5.2.0"
-]
+if sys.version_info.major == 3:
+    requirements = [
+        "bsddb3>=5.2.0"
+    ]
+else:
+    requirements = []
 
 test_requirements = [
     # TODO: put package test requirements here

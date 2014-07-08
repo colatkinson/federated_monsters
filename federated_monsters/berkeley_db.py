@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
 
 """This module contains the BerkeleyDB class."""
-import bsddb3
+try:
+    import bsddb as bsddb3
+except ImportError:
+    import bsddb3
 try:
     from db import DB, DBException
 except ImportError:
