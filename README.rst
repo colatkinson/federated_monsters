@@ -20,4 +20,5 @@ Federated Monsters is a game that seeks to follow the format of games like Pokem
 Features
 --------
 
-* TODO
+* Support for Oracle Berkeley DB
+* Standardized protocol for easy extensibility

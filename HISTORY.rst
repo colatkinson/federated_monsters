@@ -3,6 +3,18 @@
 History
 -------
 
+0.3.1 (2014-07-08)
+==================
+
+* Update :file:`.travis.yml` to finally get it to build
+
+    - Had to remove builds for all Python versions except 2.7 and 3.2
+    - thx ubuntu
+
+* Move requirements from :file:`requirements.txt` to :file:`setup.py`
+* Update :file:`README.rst` to fix badges
+* Change doc settings so building on Read The Docs works
+
 0.3.0 (2014-07-06)
 ==================
 
