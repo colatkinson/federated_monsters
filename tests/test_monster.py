@@ -26,7 +26,7 @@ class MonsterTest(unittest.TestCase):
         test_hash = hashlib.sha512(json.dumps(ex_monster.__dict__)
                                    .encode("utf-8"))
         actual_val = ex_monster.export_monster()[0]
-        print(actual_val)
+        # print(actual_val)
 
         self.assertEqual(actual_val, test_hash.hexdigest())
 
@@ -36,9 +36,10 @@ class MonsterTest(unittest.TestCase):
         exp = ex_monster.export_monster()
 
         splt = exp_cry[1].split(" ")
+        print("splt", splt[1].encode("UTF-8"))
 
-        salt = crypto.hex_to_byte(splt[1])
-        print(salt)
+        salt = crypto.hex_to_byte(splt[1].encode("UTF-8"))
+        # print(salt)
 
         key = crypto.gen_key(">implying implications", salt)
 
