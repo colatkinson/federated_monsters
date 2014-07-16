@@ -43,4 +43,6 @@ class MonsterTest(unittest.TestCase):
 
         key = crypto.gen_key(">implying implications", salt)
 
-        self.assertEqual(exp[1], crypto.decrypt(crypto.hex_to_byte(splt[0]), key.key))
+        self.assertEqual(exp[1], crypto.decrypt(crypto.hex_to_byte(
+                                                splt[0].encode("UTF-8")),
+                                                key.key))
