@@ -1,10 +1,6 @@
 # -*- coding: utf-8 -*-
-"""This module contains global variables for the program.
+"""This module contains global variables for the program."""
 
-Attributes:
-    ENC_ (str): The encoding to be used for all text encoding in the program.
-    PACK_SIZE_ (int): The packet size in bytes to be used.
-"""
-
-ENC_ = "UTF-8"
-PACK_SIZE_ = 2048
+ENC_ = "UTF-8"      #: The encoding to be used for all text in the program.
+PACK_SIZE_ = 2048   #: The packet size in bytes to be used.
+PORT_ = 8888        #: The default port for connections.

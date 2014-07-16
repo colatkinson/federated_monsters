@@ -28,15 +28,13 @@ When a client wishes to connect to a server, the following steps are taken.
 Status Codes
 ============
 
-The status codes numbering scheme is the same as the one used by HTTP.
+The status codes numbering scheme is similar to the one used by HTTP.
 
 * 1XX: Informational
 * 2XX: Success
-* 3XX: Redirection
+* 3XX: Chat
 * 4XX: Client Error
 * 5XX: Server Error
-
-While no applications for the 3XX codes has yet been decided, they are reserved for future use.
 
 The return format is as follows::
 
@@ -55,10 +53,12 @@ Status Code                  Explanation
 100  CONNECTED               A connection to the server has been made
 101  RESPONSE_REQUIRED       A response from the client is required
 200  OK                      The request has succeeded
+300  CHAT_MSG                A chat message from the server
 400  BAD_REQUEST             The request is not in a valid format
 401  BAD_HASH                The hash supplied is invalid
 402  BAD_MONSTER             The monster uploaded is not valid
 403  BAD_COMMAND             The command requested is unknown
 404  NOT_FOUND               The box has no monster matching request
 500  FAIL                    The server was unable to comply
+501  SERVER_QUIT             The server is going down
 ===  ======================  ==========================================

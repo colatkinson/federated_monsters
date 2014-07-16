@@ -5,7 +5,7 @@
 test_federated_monsters
 ----------------------------------
 
-Tests for `federated_monsters` module.
+Tests for ``federated_monsters`` module.
 """
 
 import unittest

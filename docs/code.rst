@@ -23,6 +23,18 @@ federated_monsters.box
 .. automodule:: federated_monsters.box
    :members:
 
+federated_monsters.client
+=========================
+
+.. automodule:: federated_monsters.client
+   :members:
+
+federated_monsters.crypto
+=========================
+
+.. automodule:: federated_monsters.crypto
+   :members:
+
 Databases
 =========
 

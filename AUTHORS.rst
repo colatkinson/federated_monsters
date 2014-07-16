@@ -5,7 +5,7 @@ Credits
 Development Lead
 ----------------
 
-* Colin Atkinson <colin.william.atkinson@gmail.com>
+* Colin Atkinson <114d71d1@opayq.com>
 
 Contributors
 ------------

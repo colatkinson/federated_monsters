@@ -15,5 +15,5 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 __author__ = 'Colin Atkinson'
-__email__ = 'colin.william.atkinson@gmail.com'
+__email__ = '114d71d1@opayq.com'
 __version__ = '0.3.0'

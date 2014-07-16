@@ -18,8 +18,12 @@ class DB(object):
         db (bsddb3.DB): The db on which the class can operate.
     """
 
-    def __init__(self):
-        """Init DB class."""
+    def __init__(self, db_fn):
+        """Init DB class.
+
+        Args:
+            db_fn (str): The file name of the database file.
+        """
         self.db = object()
         pass
 

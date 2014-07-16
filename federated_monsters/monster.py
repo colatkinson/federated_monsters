@@ -1,8 +1,15 @@
 # -*- coding: utf-8 -*-
 
 """This module contains the Monster and Move classes."""
-import json
 import hashlib
+import json
+import binascii
+
+try:
+    import crypto
+except ImportError:
+    from federated_monsters import crypto
+
 try:
     from global_vars import *
 except ImportError:
@@ -27,7 +34,7 @@ class Monster(object):
         self.type_name = type_name
         self.moves = moves
 
-    def export_monster(self):
+    def export_monster(self, pwd=None):
         """Export the monster to be sent to a box.
 
         Returns:
@@ -39,6 +46,11 @@ class Monster(object):
             moves_arr.append(i.serialize())
         tmp_dict["moves"] = moves_arr
         txt = json.dumps(tmp_dict)
+        if pwd:
+            key = crypto.gen_key(pwd)
+            txt = "%s %s" % (crypto.byte_to_hex(crypto.encrypt(txt, key.key)),
+                             crypto.byte_to_hex(key.salt))
+            print("txt", txt)
         hash_obj = hashlib.sha512(txt.encode(ENC_)).hexdigest()
 
         return (hash_obj, txt)

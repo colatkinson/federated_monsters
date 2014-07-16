@@ -14,12 +14,18 @@ except ImportError:
 readme = open('README.rst').read()
 history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
-if sys.version_info.major == 3:
+"""if sys.version_info.major == 3:
     requirements = [
-        "bsddb3>=5.2.0"
+        "bsddb3>=5.2.0",
+        "pycrypto>=2.5"
     ]
 else:
-    requirements = []
+    requirements = []"""
+
+requirements = [
+    "bsddb3>=5.2.0",
+    "pycrypto>=2.5"
+]
 
 test_requirements = [
     # TODO: put package test requirements here
@@ -31,7 +37,7 @@ setup(
     description='Federated Monsters is a game that seeks to follow the format of games like Pokemon, but to instead use a federated server format to store and trade creatures',
     long_description=readme + '\n\n' + history,
     author='Colin Atkinson',
-    author_email='colin.william.atkinson@gmail.com',
+    author_email='114d71d1@opayq.com',
     url='https://github.com/colatkinson/federated_monsters',
     packages=[
         'federated_monsters',

@@ -6,16 +6,16 @@ try:
 except ImportError:
     import bsddb3
 try:
-    from db import DB, DBException
+    from db import DB as GenericDB, DBException
 except ImportError:
-    from federated_monsters.db import DB, DBException
+    from federated_monsters.db import DB as GenericDB, DBException
 try:
     from global_vars import *
 except ImportError:
     from federated_monsters.global_vars import *
 
 
-class BerkeleyDB(DB):
+class BerkeleyDB(GenericDB):
 
     """A wrapper class around various Berkeley database functions.
 
@@ -28,14 +28,13 @@ class BerkeleyDB(DB):
         db (bsddb3.DB): The db on which the class can operate.
     """
 
-    def __init__(self, db_fn="monsters_db"):
+    def __init__(self, db_fn):
         """Init the BerkeleyDB class.
 
         Args:
-            db_fn (str, optional): The file name from which the database should
-                be loaded. Defaults to "monsters_db".
+            db_fn (str): The file name of the database file.
         """
-        super(DB, self).__init__()
+        super(GenericDB, self).__init__()
         self.db_fn = db_fn
         self.db = bsddb3.db.DB()
 
@@ -46,7 +45,7 @@ class BerkeleyDB(DB):
             bool: True if successful, False if error encountered.
         """
         try:
-            self.db.open(self.db_fn, None, bsddb3.db.DB_HASH,
+            self.db.open(self.db_fn, None, bsddb3.db.DB_BTREE,
                          bsddb3.db.DB_CREATE)
             return True
         except bsddb3.db.DBError:
@@ -66,7 +65,8 @@ class BerkeleyDB(DB):
             self.db.put(hash_digest.encode(ENC_), value)
             self.db.sync()
             return True
-        except bsddb3.db.DBError:
+        except bsddb3.db.DBError as e:
+            print(e)
             return False
 
     def get_entry(self, hash_digest):

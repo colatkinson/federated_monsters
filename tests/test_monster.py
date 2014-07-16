@@ -5,18 +5,21 @@
 test_monster
 ------------
 
-Tests for `box` module.
+Tests for ``monster`` module.
 """
 
-import unittest
-import json
 import hashlib
+import json
+import unittest
+import binascii
+
 from federated_monsters import monster
+from federated_monsters import crypto
 
 
 class MonsterTest(unittest.TestCase):
 
-    """A unit test for the `box` module."""
+    """A unit test for the ``monster`` module."""
 
     def test_export(self):
         ex_monster = monster.Monster("Smoke", "fluff", "normal", [])
@@ -26,3 +29,17 @@ class MonsterTest(unittest.TestCase):
         print(actual_val)
 
         self.assertEqual(actual_val, test_hash.hexdigest())
+
+    def test_encrypt(self):
+        ex_monster = monster.Monster("Smoke", "fluff", "normal", [])
+        exp_cry = ex_monster.export_monster(pwd=">implying implications")
+        exp = ex_monster.export_monster()
+
+        splt = exp_cry[1].split(" ")
+
+        salt = crypto.hex_to_byte(splt[1])
+        print(salt)
+
+        key = crypto.gen_key(">implying implications", salt)
+
+        self.assertEqual(exp[1], crypto.decrypt(crypto.hex_to_byte(splt[0]), key.key))

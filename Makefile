@@ -26,6 +26,7 @@ clean-pyc:
 
 lint:
 	flake8 federated_monsters tests
+	isort --check-only federated_monsters/*.py tests/*.py
 
 test:
 	python setup.py test
