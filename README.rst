@@ -1,5 +1,3 @@
-.. include:: <isonum.txt>
-.. include:: <isolat1.txt>
 ===============================
 Federated Monsters
 ===============================
@@ -14,7 +12,7 @@ Federated Monsters
         :target: https://pypi.python.org/pypi/federated_monsters
 
 
-Federated Monsters is a game that seeks to follow the format of games like Pok\ |eacute|\ mon, but to instead use a federated server format to store and trade creatures
+Federated Monsters is a game that seeks to follow the format of games like Pokemon, but to instead use a federated server format to store and trade creatures
 
 * Free software: GPLv3 license
 * Documentation: http://federated_monsters.readthedocs.org.
