@@ -10,32 +10,32 @@ History
 
     - Note: Do not run BerkeleyDB.close! It will make the database unreadable for some weird-ass reason
 
-* Ran files through :command:`isort`
-* Fix loop in :meth:`federated_monsters.box.Box.run()` so that it exits cleanly on :class:`KeyboardInterrupt`
-* Add to the :doc:`usage` section
-* Add :class:`federated_monsters.box.Client` class to make chat handling easier
-* Use :class:`federated_monsters.box.Client` throughout :mod:`federated_monsters.box`
+* Ran files through ``isort``
+* Fix loop in ``federated_monsters.box.Box.run()`` so that it exits cleanly on ``KeyboardInterrupt``
+* Add to the ``usage`` section
+* Add ``federated_monsters.box.Client`` class to make chat handling easier
+* Use ``federated_monsters.box.Client`` throughout ``federated_monsters.box``
 * Add code to implement chat, but not going to add it in until some implementation details are fixed
-* Add :mod:`federated_monsters.crypto` so monsters can be encrypted before upload
+* Add ``federated_monsters.crypto`` so monsters can be encrypted before upload
 
     - Prevent server owners form jacking all the monsters
 
-* Add tests for :mod:`federated_monsters.crypto`
-* Fix :file:`setup.py` so requirements aren't just for Python 3
-* Change return type of :meth:`federated_monsters.crypto.gen_key()` to :mod:`collections.namedtuple`
-* Add support for encryption to :class:`federated_monsters.box.Box`
-* Add tests for :mod:`federated_monsters.crypto` and encrypted uploads
+* Add tests for ``federated_monsters.crypto``
+* Fix ``setup.py`` so requirements aren't just for Python 3
+* Change return type of ``federated_monsters.crypto.gen_key()`` to ``collections.namedtuple``
+* Add support for encryption to ``federated_monsters.box.Box``
+* Add tests for ``federated_monsters.crypto`` and encrypted uploads
 
 0.3.1 (2014-07-08)
 ==================
 
-* Update :file:`.travis.yml` to finally get it to build
+* Update ``.travis.yml`` to finally get it to build
 
     - Had to remove builds for all Python versions except 2.7 and 3.2
     - thx ubuntu
 
-* Move requirements from :file:`requirements.txt` to :file:`setup.py`
-* Update :file:`README.rst` to fix badges
+* Move requirements from ``requirements.txt`` to ``setup.py``
+* Update ``README.rst`` to fix badges
 * Change doc settings so building on Read The Docs works
 
 0.3.0 (2014-07-06)
