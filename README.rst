@@ -2,13 +2,13 @@
 Federated Monsters
 ===============================
 
-.. image:: https://badge.fury.io/py/federated_monsters.svg
+.. image:: https://img.shields.io/pypi/v/federated_monsters.svg?style=flat
     :target: http://badge.fury.io/py/federated_monsters
     
-.. image:: https://travis-ci.org/colatkinson/federated_monsters.svg?branch=master
+.. image:: https://img.shields.io/travis/colatkinson/federated_monsters/master.svg?style=flat
         :target: https://travis-ci.org/colatkinson/federated_monsters
 
-.. image:: https://pypip.in/download/federated_monsters/badge.svg
+.. image:: https://img.shields.io/pypi/dm/federated_monsters.svg?style=flat
         :target: https://pypi.python.org/pypi/federated_monsters
 
 
