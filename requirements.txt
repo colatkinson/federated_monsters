@@ -1,5 +1,5 @@
 --index-url https://pypi.python.org/simple/
 
-wheel==0.23.0
+wheel==0.38.1
 sphinxcontrib-napoleon>=0.2.6
 -e .
